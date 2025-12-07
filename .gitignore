@@ -4,3 +4,8 @@
 .DS_Store
 temp/
 scratch/
+
+# Optional: Uncomment to keep your practice private
+# daily-logs/
+# exercises/*-solution.*
+# exercises/*-notes.*

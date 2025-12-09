@@ -7,12 +7,30 @@ A complete, achievement-based system for mastering Linux through daily practice.
 **Current Week**: 1  
 **Streak**: 0 days
 
+## 🎯 Choose Your Path
+
+### Path A: General Linux Mastery (Original)
+Self-paced learning focused on practical skills and real-world projects.
+- **Timeline**: 24+ weeks
+- **Cost**: Free
+- **Outcome**: Strong Linux skills, portfolio of projects
+
+### Path B: LPIC-1 Certification (Recommended)
+Structured study aligned with industry-recognized certification.
+- **Timeline**: 16 weeks
+- **Cost**: $400 (exam fees)
+- **Outcome**: LPIC-1 certification + job-ready skills
+
+**See**: [CERTIFICATION-PATH.md](CERTIFICATION-PATH.md) for detailed certification roadmap
+
 ## 🚀 Quick Start
 
 1. **Read**: [DAILY-PRACTICE.md](DAILY-PRACTICE.md) - Your daily routine
 2. **Explore**: [RESOURCES.md](RESOURCES.md) - All learning materials
 3. **Track**: [ACHIEVEMENTS.md](ACHIEVEMENTS.md) - Your progress milestones
 4. **Practice**: Start with LabEx (https://labex.io/learn/linux)
+
+**For Certification**: See [cert-study/WEEK-BY-WEEK.md](cert-study/WEEK-BY-WEEK.md) for detailed daily plan
 
 ## 📚 System Overview
 

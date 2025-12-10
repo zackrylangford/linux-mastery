@@ -2,6 +2,8 @@
 
 A simple, sustainable 20-30 minute daily routine for learning Linux in the AI age.
 
+**Want to see this in action?** Check out [EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md) for a complete example of this routine applied to learning how to find large files.
+
 ## The Simple Daily Flow (20-30 minutes)
 
 ### 1. Pick One Problem (2 minutes)
@@ -185,4 +187,4 @@ Don't overthink it:
 
 Do this daily. You'll be amazed at your progress in a month.
 
-See [GETTING-STARTED.md](GETTING-STARTED.md) for your first week's problems.
+See [GETTING-STARTED.md](GETTING-STARTED.md) for your first week's problems, or [EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md) for a detailed example of this process in action.

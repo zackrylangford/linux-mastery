@@ -146,38 +146,38 @@
     - Show how to verify results
     - Requirements: 4.1, 4.5
 
-- [ ] 10. Create example problem guides for major domains
-  - [ ] 10.1 Create permissions problem guide
+- [x] 10. Create example problem guides for major domains
+  - [x] 10.1 Create permissions problem guide
     - Understanding file permissions
     - Tools: chmod, chown, umask
     - Recognition examples
     - Requirements: 1.1, 1.2, 3.2
   
-  - [ ] 10.2 Create networking problem guide
+  - [x] 10.2 Create networking problem guide
     - Basic network troubleshooting
     - Tools: ping, netstat, ss, ip
     - Recognition examples
     - Requirements: 1.1, 1.2, 3.2
   
-  - [ ] 10.3 Create system monitoring problem guide
+  - [x] 10.3 Create system monitoring problem guide
     - Checking system resources
     - Tools: df, free, top, iostat
     - Recognition examples
     - Requirements: 1.1, 1.2, 3.2
 
-- [ ] 11. Final cleanup and documentation
-  - [ ] 11.1 Archive old structure
+- [x] 11. Final cleanup and documentation
+  - [x] 11.1 Archive old structure
     - Move old command-focused content to archive/
     - Keep for reference but don't confuse with new structure
     - Requirements: 1.4
   
-  - [ ] 11.2 Create comprehensive example
+  - [x] 11.2 Create comprehensive example
     - Full walkthrough of learning one problem domain
     - Show all steps from start to finish
     - Include AI interaction examples
     - Requirements: 8.1, 8.3
   
-  - [ ] 11.3 Update all cross-references
+  - [x] 11.3 Update all cross-references
     - Ensure all links point to new structure
     - Update any references in existing docs
     - Requirements: 1.4

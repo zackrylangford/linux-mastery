@@ -85,9 +85,10 @@ linux-mastery/
 ├── references/                 # NEW: Quick lookups
 │   ├── quick-reference.md
 │   └── pattern-recognition.md
-├── topics/                     # OLD: Keep for reference
-├── exercises/                  # OLD: Keep for reference
-└── daily-logs/                 # OLD: Keep for reference
+└── archive/                    # OLD: Archived command-focused content
+    ├── topics/                 # Original weekly topics
+    ├── exercises/              # Original exercises
+    └── daily-logs/             # Historical logs
 ```
 
 ### Content Organization
@@ -248,10 +249,12 @@ Week 1 Complete:
 2. **Old notes** - Reference material for syntax details
 3. **Old logs** - Track record of your learning journey
 
-The old content stays in:
-- `topics/` - Keep for reference
-- `exercises/` - Keep for reference
-- `daily-logs/` - Keep for reference
+The old content has been moved to:
+- `archive/topics/` - Original weekly topics for reference
+- `archive/exercises/` - Original exercises for reference
+- `archive/daily-logs/` - Historical logs for reference
+
+See `archive/README.md` for more information about the archived content.
 
 ### Step 4: Start Using the New Structure
 
@@ -298,15 +301,15 @@ The old content stays in:
 - [ ] Read the new [README.md](README.md)
 - [ ] Read [GETTING-STARTED.md](GETTING-STARTED.md)
 - [ ] Start with Day 1 in the new structure
-- [ ] Ignore the old `topics/` and `exercises/` folders
+- [ ] The old content is in `archive/` if you need it for reference
 - [ ] Build your `my-knowledge/` from scratch
 
 ### For Learners with Some Progress
 
-- [ ] Review what you've learned in old structure
+- [ ] Review what you've learned in old structure (check `archive/` if needed)
 - [ ] Create `my-knowledge/problems-i-solve.md` from old notes
 - [ ] Translate completed topics into problems you can solve
-- [ ] Keep old content as reference
+- [ ] Old content is in `archive/` for reference
 - [ ] Continue with new structure for future learning
 - [ ] Browse `problems/` to find gaps in knowledge
 
@@ -325,7 +328,7 @@ The old content stays in:
 - [ ] Review `cert-prep/syntax-to-recognize.md`
 - [ ] Practice with `cert-prep/recognition-exercises.md`
 - [ ] Balance conceptual learning with syntax recognition
-- [ ] Use old exercises for additional practice
+- [ ] Use `archive/exercises/` for additional practice if needed
 - [ ] Focus on recognition, not just recall
 
 ## Common Questions
@@ -338,9 +341,9 @@ The old content stays in:
 
 ### Q: What if I liked the old structure better?
 
-**You can use both!** The old content is still there:
+**You can use both!** The old content is archived:
 - Use `problems/` for learning new topics
-- Use `topics/` and `exercises/` as reference
+- Use `archive/topics/` and `archive/exercises/` as reference
 - Mix and match what works for you
 
 ### Q: Should I delete my old notes and logs?

@@ -42,7 +42,7 @@ This repository helps you build practical Linux skills by learning problems, not
 
 **That's it!** Tomorrow, pick a different problem. Build your knowledge one problem at a time.
 
-See [GETTING-STARTED.md](GETTING-STARTED.md) for your complete first week.
+See [GETTING-STARTED.md](GETTING-STARTED.md) for your complete first week, or [EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md) for a detailed example of the entire learning process.
 
 ## 📁 Repository Structure (What You'll Actually Use)
 
@@ -143,10 +143,11 @@ You don't need to write commands from memory, but you do need to recognize what 
 ## 🚦 Getting Started Paths
 
 ### Path 1: Complete Beginner
-1. Read [GETTING-STARTED.md](GETTING-STARTED.md)
-2. Start with `problems/filesystem-mental-model/`
-3. Follow the first week guide
-4. Build your `my-knowledge/` as you go
+1. Read [EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md) to see the full process
+2. Read [GETTING-STARTED.md](GETTING-STARTED.md) for your first week
+3. Start with `problems/filesystem-mental-model/`
+4. Follow the first week guide
+5. Build your `my-knowledge/` as you go
 
 ### Path 2: Some Linux Experience
 1. Browse `problems/` to find gaps in your knowledge
@@ -162,10 +163,12 @@ You don't need to write commands from memory, but you do need to recognize what 
 
 ## 📖 Additional Resources
 
+- **EXAMPLE-WALKTHROUGH.md** - Complete example of learning one problem from start to finish
 - **DAILY-PRACTICE.md** - Your simple 20-30 minute daily routine
 - **GETTING-STARTED.md** - Step-by-step guide for your first week
 - **RESOURCES.md** - External learning materials and references
 - **CERTIFICATION-PATH.md** - LPIC-1 certification roadmap
+- **MIGRATION-GUIDE.md** - Transitioning from old command-focused structure
 
 ## 🤝 How to Use This Repository
 
@@ -200,9 +203,15 @@ You don't need to write commands from memory to be effective with Linux.
 
 ## 🌟 Start Now
 
-1. Open [GETTING-STARTED.md](GETTING-STARTED.md)
-2. Follow Day 1 instructions
-3. Spend 20-30 minutes learning one problem
-4. Come back tomorrow for Day 2
+**New to this approach?**
+1. Read [EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md) - See the complete process in action
+2. Open [GETTING-STARTED.md](GETTING-STARTED.md) - Your first week guide
+3. Follow Day 1 instructions
+4. Spend 20-30 minutes learning one problem
+5. Come back tomorrow for Day 2
+
+**Migrating from old structure?**
+- See [MIGRATION-GUIDE.md](MIGRATION-GUIDE.md) for how to transition your progress
+- Old content is preserved in `archive/` directory
 
 Learning Linux doesn't have to be overwhelming. One problem at a time, you'll build real skills.

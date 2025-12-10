@@ -113,9 +113,20 @@ All free, curated resources for your learning journey.
 ## Daily Practice Tools
 
 ### Command Line Challenge Generator
-- Create your own using the exercises in this repo
+- Create your own using the problem guides in this repo
 - Use LabEx daily challenges
 
 ### Cheat Sheets
 - Store in `/references` directory
 - Create your own as you learn
+
+## Repository Guides
+
+### Learning Process
+- **[EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md)** - Complete example of learning one problem
+- **[GETTING-STARTED.md](GETTING-STARTED.md)** - Your first week guide
+- **[DAILY-PRACTICE.md](DAILY-PRACTICE.md)** - Simple daily routine
+
+### Structure
+- **[README.md](README.md)** - Overview and philosophy
+- **[MIGRATION-GUIDE.md](MIGRATION-GUIDE.md)** - Transitioning from old structure

@@ -322,6 +322,8 @@ Goal-oriented learning path aligned with industry certifications.
 2. **Practice Exam** (45 min) - Timed section
 3. **Document** (15 min) - Update notes and weak areas
 
+**See also**: [DAILY-PRACTICE.md](DAILY-PRACTICE.md) for the general learning routine, and [EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md) for a complete example of the learning process.
+
 ## 🎯 Exam Preparation Timeline
 
 ### 2 Months Before

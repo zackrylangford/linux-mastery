@@ -2,6 +2,8 @@
 
 A step-by-step guide to learning Linux the AI-age way. Follow this for your first week, then continue at your own pace.
 
+**Want to see the complete process first?** Check out [EXAMPLE-WALKTHROUGH.md](EXAMPLE-WALKTHROUGH.md) for a detailed walkthrough of learning one problem domain from start to finish.
+
 ## Before You Start (5 minutes)
 
 ### What You'll Need

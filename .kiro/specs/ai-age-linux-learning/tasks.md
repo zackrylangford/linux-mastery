@@ -7,27 +7,27 @@
   - Create `references/` directory for quick lookups
   - Requirements: 1.4, 3.1, 9.2
 
-- [ ] 2. Build problem guide templates and examples
-  - [ ] 2.1 Create problem guide template
+- [x] 2. Build problem guide templates and examples
+  - [x] 2.1 Create problem guide template
     - Define standard structure for problem guides
     - Include sections: problem description, available tools, examples, AI prompts
     - Requirements: 1.1, 1.2, 1.3
   
-  - [ ] 2.2 Create first problem guide: Finding Files
+  - [x] 2.2 Create first problem guide: Finding Files
     - Document the "finding files" problem domain
     - List tools: find, locate, grep, du
     - Provide recognition examples with explanations
     - Include AI prompt templates
     - Requirements: 1.1, 1.2, 3.2, 4.1
   
-  - [ ] 2.3 Create second problem guide: Managing Processes
+  - [x] 2.3 Create second problem guide: Managing Processes
     - Document process management problems
     - List tools: ps, top, htop, kill, nice
     - Provide recognition examples
     - Include AI prompt templates
     - Requirements: 1.1, 1.2, 3.2, 4.1
   
-  - [ ] 2.4 Create third problem guide: Text Processing
+  - [x] 2.4 Create third problem guide: Text Processing
     - Document text manipulation problems
     - List tools: grep, sed, awk, cut, sort
     - Provide recognition examples

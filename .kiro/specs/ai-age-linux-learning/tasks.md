@@ -86,14 +86,14 @@
     - Provide multiple examples of each pattern
     - Requirements: 10.1, 10.2, 10.3
 
-- [ ] 6. Create certification preparation materials
-  - [ ] 6.1 Create syntax-to-recognize.md
+- [x] 6. Create certification preparation materials
+  - [x] 6.1 Create syntax-to-recognize.md
     - List exam-relevant syntax from LPIC-1
     - Organize by topic area
     - Mark as "recognize, don't memorize"
     - Requirements: 7.1, 7.2, 7.3
   
-  - [ ] 6.2 Create recognition practice exercises
+  - [x] 6.2 Create recognition practice exercises
     - Code snippets with "what does this do?" questions
     - Cover exam-relevant syntax
     - Include explanations

@@ -1,99 +1,208 @@
-# Linux Mastery Journey
+# Linux Learning for the AI Age
 
-A complete, achievement-based system for mastering Linux through daily practice.
+Learn Linux the modern way: understand problems, recognize patterns, and collaborate with AI.
 
-**Start Date**: 2025-12-07  
-**Current Level**: Novice  
-**Current Week**: 1  
-**Streak**: 0 days
+## Why This Approach?
 
-## 🎯 Choose Your Path
+In 2025, AI can generate any Linux command you need. So why memorize syntax?
 
-### Path A: General Linux Mastery (Original)
-Self-paced learning focused on practical skills and real-world projects.
-- **Timeline**: 24+ weeks
-- **Cost**: Free
-- **Outcome**: Strong Linux skills, portfolio of projects
+Instead, focus on:
+- **What problems can Linux solve?** (Know what's possible)
+- **What does this code do?** (Read and understand)
+- **Which tool for which problem?** (Make good choices)
+- **How do I direct AI effectively?** (Collaborate with AI)
 
-### Path B: LPIC-1 Certification (Recommended)
-Structured study aligned with industry-recognized certification.
-- **Timeline**: 16 weeks
-- **Cost**: $400 (exam fees)
-- **Outcome**: LPIC-1 certification + job-ready skills
+This repository helps you build practical Linux skills by learning problems, not commands.
 
-**See**: [CERTIFICATION-PATH.md](CERTIFICATION-PATH.md) for detailed certification roadmap
+## 🚀 Quick Start (Your First Day)
 
-## 🚀 Quick Start
+**Day 1: Learn to find large files** (20-30 minutes total)
 
-1. **Read**: [DAILY-PRACTICE.md](DAILY-PRACTICE.md) - Your daily routine
-2. **Explore**: [RESOURCES.md](RESOURCES.md) - All learning materials
-3. **Track**: [ACHIEVEMENTS.md](ACHIEVEMENTS.md) - Your progress milestones
-4. **Practice**: Start with LabEx (https://labex.io/learn/linux)
+1. **Pick a problem** (2 min)
+   - Open `problems/finding-files/README.md`
 
-**For Certification**: See [cert-study/WEEK-BY-WEEK.md](cert-study/WEEK-BY-WEEK.md) for detailed daily plan
+2. **Read and understand** (10 min)
+   - What problem does this solve?
+   - What tools exist? (find, du, locate)
+   - Look at examples - what do they do?
 
-## 📚 System Overview
+3. **Try it with AI** (10 min)
+   - Ask AI: "Show me how to find files larger than 100MB in my home directory"
+   - Run the command AI gives you
+   - Verify it works
 
-### Daily Commitment: 30-60 minutes
-- Morning: Quick review + LabEx challenge (15-20 min)
-- Main session: Structured learning or challenges (30-40 min)
-- Evening: Update achievements + commit (5 min)
+4. **Document what you learned** (5 min)
+   - Add to `my-knowledge/problems-i-solve.md`:
+     ```
+     ## Finding Large Files
+     - Problem: Need to free up disk space
+     - Solution: Use find with -size flag
+     - AI prompt: "Show me how to find files larger than X in directory Y"
+     ```
 
-### Weekly Structure
-- **Mon/Wed/Fri**: Structured learning from topics
-- **Tue/Thu**: Challenge days
-- **Sat/Sun**: Project work
-- **Sunday evening**: Weekly review
+**That's it!** Tomorrow, pick a different problem. Build your knowledge one problem at a time.
 
-### Progression System
-- **Level 1 (Weeks 1-4)**: Novice - 4 achievements
-- **Level 2 (Weeks 5-12)**: Apprentice - 7 achievements
-- **Level 3 (Weeks 13-24)**: Journeyman - 6 achievements
-- **Level 4 (Weeks 25+)**: Expert - Advanced achievements
+See [GETTING-STARTED.md](GETTING-STARTED.md) for your complete first week.
 
-## 📁 Repository Structure
+## 📁 Repository Structure (What You'll Actually Use)
 
 ```
 linux-mastery/
-├── DAILY-PRACTICE.md      # Your daily routine guide
-├── RESOURCES.md           # All learning materials
-├── ACHIEVEMENTS.md        # Progress tracking
-├── daily-logs/            # Daily practice logs
-├── topics/                # Learning content by subject
-├── exercises/             # Hands-on practice problems
-├── projects/              # Real-world projects
-└── references/            # Cheat sheets & quick refs
+├── problems/              # START HERE - Browse by problem type
+│   ├── finding-files/        # How to locate files
+│   ├── managing-processes/   # Working with running programs
+│   ├── text-processing/      # Manipulating text and data
+│   ├── navigating-filesystem/ # Moving around directories
+│   ├── managing-directories/ # Creating, organizing folders
+│   ├── understanding-paths/  # Absolute vs relative paths
+│   └── filesystem-mental-model/ # Core concepts
+│
+├── my-knowledge/          # YOUR personal notes (most important!)
+│   ├── problems-i-solve.md   # Simple list: "I can do X"
+│   ├── good-prompts.md       # AI prompts that worked
+│   └── daily-log.md          # Quick daily notes
+│
+├── cert-prep/             # Only if doing LPIC-1 certification
+│   ├── syntax-to-recognize.md # What to memorize for exams
+│   └── recognition-exercises.md # Practice for exam syntax
+│
+└── references/            # Quick lookup when needed
+    ├── quick-reference.md     # Fast answers by problem
+    └── pattern-recognition.md # Common Linux patterns
 ```
 
-## 🎯 Current Focus
+You'll spend 90% of your time in:
+1. `problems/` - Learning what's possible
+2. `my-knowledge/` - Building your personal reference
 
-**Week 1: Filesystem Explorer**
-- Goal: Master filesystem navigation and structure
-- Resources: LabEx filesystem lessons + local practice
-- Achievement: Complete 5 checkpoints to unlock Week 2
+## 💡 The Philosophy
 
-## 🏆 Achievement Progress
+### What You DON'T Need to Memorize
+- Exact command syntax and flags
+- All the options for every command
+- Complex one-liners you can look up
 
-- [ ] Week 1: Filesystem Explorer
-- [ ] Week 2: Command Master
-- [ ] Week 3: Permission Guardian
-- [ ] Week 4: Text Wizard
+### What You DO Need to Know
+- What problems Linux can solve
+- Which tools exist for which problems
+- How to recognize what code does when you see it
+- How to ask AI for help effectively
+- Core mental models (everything is a file, process lifecycle, etc.)
 
-See [ACHIEVEMENTS.md](ACHIEVEMENTS.md) for complete list.
+### Why This Works
+- **AI handles syntax** - You handle strategy
+- **Recognition over recall** - Read code, don't write from memory
+- **Problems over commands** - Learn what's possible, not what to type
+- **Practical focus** - Build real skills, not trivia knowledge
 
-## 📖 Key Resources
+## 🎯 Daily Practice (20-30 minutes)
 
-**Primary Practice**: [LabEx Interactive Labs](https://labex.io/learn/linux) (270+ free lessons)  
-**Video Course**: [freeCodeCamp Linux Crash Course](https://www.youtube.com/watch?v=6WatcfENsOU)  
-**Reference**: [Linux Handbook](https://linuxhandbook.com/)  
-**Community**: [r/linuxquestions](https://reddit.com/r/linuxquestions)
+See [DAILY-PRACTICE.md](DAILY-PRACTICE.md) for the simple daily routine:
+1. Pick one problem from `problems/`
+2. Read and understand what's possible
+3. Try it with AI assistance
+4. Document what you learned
 
-See [RESOURCES.md](RESOURCES.md) for complete list.
+No complex tracking. No elaborate exercises. Just consistent, practical learning.
 
-## 💡 Philosophy
+## 📚 What's Inside
 
-- **Consistency over intensity**: 30 minutes daily beats 5 hours on weekends
-- **Hands-on first**: Type every command yourself
-- **Achievement-driven**: Clear milestones = motivation
-- **Build in public**: Commit daily, track progress
-- **Real-world focus**: Learn by solving actual problems
+### Problem Guides (`problems/`)
+Each problem guide explains:
+- What problem this solves
+- When you encounter this
+- Available tools and approaches
+- Examples to recognize
+- How to ask AI for help
+
+### Your Knowledge Base (`my-knowledge/`)
+Simple templates to track:
+- Problems you can solve
+- AI prompts that work
+- Quick daily notes
+
+### Certification Prep (`cert-prep/`)
+If you're doing LPIC-1:
+- Syntax you need to recognize for exams
+- Practice exercises for exam scenarios
+- What to memorize vs. what to look up
+
+### Quick References (`references/`)
+Fast lookup organized by problem type, not alphabetically.
+
+## 🎓 For Certification Students
+
+Preparing for LPIC-1 or similar? This approach still works:
+
+- **Conceptual understanding** - You'll have this naturally
+- **Syntax recognition** - Use `cert-prep/syntax-to-recognize.md`
+- **Exam practice** - Use `cert-prep/recognition-exercises.md`
+
+You don't need to write commands from memory, but you do need to recognize what they do. This repository helps you build both skills.
+
+## 🚦 Getting Started Paths
+
+### Path 1: Complete Beginner
+1. Read [GETTING-STARTED.md](GETTING-STARTED.md)
+2. Start with `problems/filesystem-mental-model/`
+3. Follow the first week guide
+4. Build your `my-knowledge/` as you go
+
+### Path 2: Some Linux Experience
+1. Browse `problems/` to find gaps in your knowledge
+2. Focus on problem areas you haven't mastered
+3. Practice AI collaboration on familiar topics
+4. Build your personal knowledge base
+
+### Path 3: Certification Focused
+1. Start with Path 1 or 2 for concepts
+2. Add `cert-prep/` materials for exam syntax
+3. Use recognition exercises for practice
+4. Balance conceptual learning with exam prep
+
+## 📖 Additional Resources
+
+- **DAILY-PRACTICE.md** - Your simple 20-30 minute daily routine
+- **GETTING-STARTED.md** - Step-by-step guide for your first week
+- **RESOURCES.md** - External learning materials and references
+- **CERTIFICATION-PATH.md** - LPIC-1 certification roadmap
+
+## 🤝 How to Use This Repository
+
+1. **Don't try to read everything** - Start with one problem
+2. **Build your personal notes** - `my-knowledge/` is your most valuable asset
+3. **Practice with AI** - Learn to collaborate, not compete
+4. **Focus on understanding** - Why this approach? When to use it?
+5. **Keep it simple** - 20-30 minutes daily beats marathon sessions
+
+## 💭 Philosophy in Practice
+
+Traditional approach:
+- Memorize: `find /path -name "*.txt" -type f -mtime -7`
+- Problem: You forget the syntax in a week
+
+AI-age approach:
+- Know: "I need to find files by name, type, or modification time"
+- Recognize: "This find command is searching for text files modified in the last 7 days"
+- Direct AI: "Show me how to find text files modified in the last week"
+- Result: You solve problems without memorizing syntax
+
+## 🎯 Success Metrics
+
+You're succeeding when you can:
+- Identify what problem a script is solving
+- Choose appropriate tools for new problems
+- Direct AI to generate working solutions
+- Verify that AI solutions are correct
+- Explain why an approach works
+
+You don't need to write commands from memory to be effective with Linux.
+
+## 🌟 Start Now
+
+1. Open [GETTING-STARTED.md](GETTING-STARTED.md)
+2. Follow Day 1 instructions
+3. Spend 20-30 minutes learning one problem
+4. Come back tomorrow for Day 2
+
+Learning Linux doesn't have to be overwhelming. One problem at a time, you'll build real skills.

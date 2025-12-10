@@ -119,14 +119,14 @@
     - Provide example workflow
     - Requirements: 1.1, 8.1
 
-- [ ] 8. Create migration guide
-  - [ ] 8.1 Document migration strategy
+- [x] 8. Create migration guide
+  - [x] 8.1 Document migration strategy
     - Explain what's changing and why
     - Provide before/after comparison
     - Show how to transition existing progress
     - Requirements: 1.1
   
-  - [ ] 8.2 Create content transformation script
+  - [x] 8.2 Create content transformation script
     - Script to help reorganize existing content
     - Convert command-focused to problem-focused
     - Generate problem guide templates from existing content

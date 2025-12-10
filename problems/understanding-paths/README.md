@@ -191,20 +191,169 @@ vim ~/.vimrc
 
 ## Try with AI
 
-### Beginner prompts
-- "Explain the difference between absolute and relative paths"
-- "Show me how to reference a file in my home directory"
-- "What does .. mean in a file path?"
+**New to AI collaboration?** Check out the [AI Prompting Guide](../../references/ai-prompting-guide.md) for detailed tips on working effectively with AI.
 
-### Intermediate prompts
-- "Show me how to navigate from /home/user/projects/app1 to /home/user/projects/app2 using relative paths"
-- "How do I reference a file two directories up from my current location?"
-- "Show me examples of when to use absolute vs relative paths"
+### How to Use AI for This Problem
 
-### Advanced prompts
-- "Show me how to write a script that works with both absolute and relative paths"
-- "How do I convert a relative path to an absolute path?"
-- "Show me how to handle paths with spaces or special characters"
+**Step 1: Understand what you need**
+Before asking AI, be clear about:
+- Do you need to understand path concepts or use them?
+- Are you writing a script or just navigating?
+- Do you know your current location?
+- Do you need portability or precision?
+
+**Step 2: Use a good prompt template**
+
+```
+Understanding concepts:
+"Explain the difference between absolute and relative paths with examples"
+"What does [path component like .., ~, /] mean?"
+
+Using paths:
+"Show me how to reference [file] from [current location]"
+"Show me both absolute and relative paths to [location]"
+
+Converting paths:
+"How do I convert a relative path to an absolute path?"
+"Show me how to reference [location] using the home directory shortcut"
+
+Troubleshooting:
+"I'm in [location] and getting 'file not found' for [path]. What's wrong?"
+```
+
+**Step 3: Verify the AI's solution**
+
+Before using a path, check:
+- [ ] Does it start with / (absolute) or not (relative)?
+- [ ] If relative, am I in the right location?
+- [ ] Does it use ~ correctly for home directory?
+- [ ] Are there the right number of .. for going up?
+- [ ] Can I test it with ls or cd first?
+
+**Step 4: Test safely**
+
+```bash
+# All path operations are SAFE - they don't modify anything
+pwd                           # Check where you are
+ls /absolute/path            # Test absolute path
+ls relative/path             # Test relative path
+ls ~/path/from/home          # Test home-relative path
+cd /some/path && pwd         # Navigate and verify
+
+# If path doesn't work, check your location
+pwd                          # Where am I?
+ls -la                       # What's here?
+```
+
+**Step 5: Understand the result**
+
+Ask AI to explain if you don't understand:
+- "Why does this relative path work from here but not from there?"
+- "How do I know how many .. I need?"
+- "What's the difference between ./file and just file?"
+
+### Practice Exercises with AI
+
+**Exercise 1: Understanding path types (SAFE)**
+- **Prompt**: "Explain the difference between absolute and relative paths with examples"
+- **Verify**: Should explain / prefix and current location dependency
+- **Test**: Try the examples AI provides
+- **Document**: Note when to use each type
+
+**Exercise 2: Using home directory shortcut (SAFE)**
+- **Prompt**: "Show me how to reference a file in my documents folder using the home directory shortcut"
+- **Verify**: Should suggest `~/documents/filename`
+- **Test**: Try `ls ~/documents` from different locations
+- **Document**: Note that ~ works from anywhere
+
+**Exercise 3: Relative navigation (SAFE)**
+- **Prompt**: "I'm in /home/user/projects/app1/src. Show me how to reference a file in /home/user/projects/app2/config using a relative path"
+- **Verify**: Should suggest `../../app2/config/filename`
+- **Test**: Navigate to the location and try the path
+- **Document**: Note the pattern for sibling directories
+
+**Exercise 4: Converting paths (SAFE)**
+- **Prompt**: "I'm in /home/user/projects and I have a relative path ../documents/file.txt. What's the absolute path?"
+- **Verify**: Should explain it resolves to /home/user/documents/file.txt
+- **Test**: Use `realpath` or `readlink -f` to verify
+- **Document**: Note how to resolve relative to absolute
+
+**Exercise 5: Troubleshooting paths (SAFE)**
+- **Prompt**: "I'm trying to access ../config/app.conf but getting 'file not found'. How do I debug this?"
+- **Verify**: Should suggest checking pwd, ls .., and verifying the path
+- **Test**: Create a scenario and practice debugging
+- **Document**: Note the debugging steps
+
+**Exercise 6: Path in scripts (SAFE)**
+- **Prompt**: "Show me how to write a script that references a config file that works regardless of where the script is run from"
+- **Verify**: Should suggest absolute paths or using $HOME
+- **Test**: Create a simple script and test from different locations
+- **Document**: Note best practices for scripts
+
+### Common AI Collaboration Patterns
+
+**Pattern 1: Understanding by example**
+```
+You: "Explain relative paths"
+AI: [gives explanation]
+You: "Show me an example of navigating from /home/user/a/b/c to /home/user/x/y"
+AI: [gives ../../x/y]
+You: "Can you break down why it's two ..?"
+AI: [explains each step]
+```
+
+**Pattern 2: Debugging path issues**
+```
+You: "I'm getting 'file not found' for ../config/app.conf"
+AI: [asks for current location]
+You: "I'm in /home/user/projects/myapp"
+AI: [explains what the path resolves to and how to fix it]
+```
+
+**Pattern 3: Learning by comparison**
+```
+You: "Show me three different ways to reference /home/user/documents/file.txt"
+AI: [gives absolute, relative from different locations, and ~/documents/file.txt]
+You: "When would I use each one?"
+AI: [explains use cases]
+```
+
+### Understanding Path Resolution
+
+**Practice with AI:**
+Ask AI to help you understand how paths resolve:
+
+```
+"I'm in /home/alice/projects/myapp/src. 
+Show me what these paths resolve to:
+- ./main.py
+- ../README.md
+- ../../other-app/config.json
+- ~/documents/notes.txt
+- /etc/hostname"
+```
+
+AI should break down each one and explain the resolution.
+
+### Verification Checklist
+
+After getting a solution from AI:
+- [ ] I understand whether this is absolute or relative
+- [ ] I know what location this path assumes (if relative)
+- [ ] I can explain how the path resolves step by step
+- [ ] I've tested the path with ls or cd
+- [ ] I understand when to use this path type
+- [ ] I know how to debug if the path doesn't work
+- [ ] I've documented the pattern
+
+### Next Steps
+
+1. Practice all exercises - they're all safe!
+2. Try creating paths between different locations
+3. Practice converting between absolute and relative
+4. Document path patterns in `my-knowledge/problems-i-solve.md`
+
+**Remember**: Understanding paths is fundamental to Linux. Take time to really understand how they work - it will make everything else easier!
 
 ## What to memorize (for exams)
 

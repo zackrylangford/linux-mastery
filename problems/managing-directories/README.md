@@ -173,20 +173,196 @@ mkdir -p logs
 
 ## Try with AI
 
-### Beginner prompts
-- "Show me how to create a new directory called 'my-project'"
-- "How do I delete an empty directory?"
-- "Show me how to rename a directory"
+**New to AI collaboration?** Check out the [AI Prompting Guide](../../references/ai-prompting-guide.md) for detailed tips on working effectively with AI.
 
-### Intermediate prompts
-- "Show me how to create a project structure with src, tests, and docs folders"
-- "How do I copy a directory and all its files to a backup location?"
-- "Show me how to safely delete a directory that has files in it"
+### How to Use AI for This Problem
 
-### Advanced prompts
-- "Show me how to create a nested directory structure for a web app with frontend and backend folders"
-- "How do I move all directories matching a pattern to a different location?"
-- "Show me how to create a directory structure from a list in a file"
+**Step 1: Understand what you need**
+Before asking AI, be clear about:
+- Are you creating, deleting, copying, or moving directories?
+- Do you need a single directory or a nested structure?
+- Does the directory have contents or is it empty?
+- Do you need to preserve permissions or timestamps?
+
+**Step 2: Use a good prompt template**
+
+```
+Creating directories:
+"Show me how to create a directory called [name]"
+"Show me how to create a nested directory structure [path/to/nested/dir]"
+"Show me how to create multiple directories [list] at once"
+
+Deleting directories:
+"Show me how to safely remove an empty directory called [name]"
+"Show me how to delete a directory and all its contents called [name]"
+
+Copying directories:
+"Show me how to copy directory [source] to [destination] with all its contents"
+
+Moving/renaming:
+"Show me how to rename directory [old] to [new]"
+"Show me how to move directory [source] to [destination]"
+```
+
+**Step 3: Verify the AI's solution**
+
+Before running the command, check:
+- [ ] Are the directory names/paths correct?
+- [ ] Will it delete anything? (look for `rm`, `rmdir`)
+- [ ] If deleting, do you have a backup?
+- [ ] If creating nested dirs, does it use `-p` flag?
+- [ ] Can you test it safely first?
+
+**Step 4: Test safely**
+
+```bash
+# SAFE: Creating directories
+mkdir test-dir                    # Safe - creates directory
+mkdir -p path/to/nested/dir       # Safe - creates nested structure
+
+# SAFE: Listing to verify
+ls -la                            # Check what you created
+
+# CAUTION: Deleting empty directories
+rmdir test-dir                    # Safe - only works if empty
+
+# DANGEROUS: Deleting with contents
+rm -r test-dir                    # Deletes everything inside!
+rm -rf test-dir                   # Force deletes - VERY dangerous!
+
+# BEST PRACTICE: Check before deleting
+ls -la dirname                    # 1. See what's inside
+rmdir dirname                     # 2. Try safe removal first
+rm -r dirname                     # 3. Only if you're sure
+```
+
+**Step 5: Understand the result**
+
+Ask AI to explain if you don't understand:
+- "What's the difference between mkdir and mkdir -p?"
+- "Why did rmdir give an error?"
+- "What does rm -rf do and why is it dangerous?"
+
+### Practice Exercises with AI
+
+**Exercise 1: Create a single directory (SAFE)**
+- **Prompt**: "Show me how to create a new directory called 'my-project'"
+- **Verify**: Should suggest `mkdir my-project`
+- **Test**: Run it and verify with `ls`
+- **Document**: Note this basic pattern
+
+**Exercise 2: Create nested structure (SAFE)**
+- **Prompt**: "Show me how to create a nested directory structure projects/myapp/src in one command"
+- **Verify**: Should suggest `mkdir -p projects/myapp/src`
+- **Test**: Run it and verify with `tree` or `ls -R`
+- **Document**: Note the -p flag for nested creation
+
+**Exercise 3: Create multiple directories (SAFE)**
+- **Prompt**: "Show me how to create three directories called src, tests, and docs in one command"
+- **Verify**: Should suggest `mkdir src tests docs`
+- **Test**: Run it and verify with `ls`
+- **Document**: Note you can create multiple at once
+
+**Exercise 4: Copy a directory (SAFE)**
+- **Prompt**: "Show me how to copy a directory called 'project' to 'project-backup' with all its contents"
+- **Verify**: Should suggest `cp -r project project-backup`
+- **Test**: Create a test directory first, add some files, then copy
+- **Document**: Note the -r flag for recursive copy
+
+**Exercise 5: Rename a directory (SAFE)**
+- **Prompt**: "Show me how to rename a directory from 'old-name' to 'new-name'"
+- **Verify**: Should suggest `mv old-name new-name`
+- **Test**: Create a test directory and rename it
+- **Document**: Note that mv is used for renaming
+
+**Exercise 6: Remove empty directory (SAFE)**
+- **Prompt**: "Show me how to safely remove an empty directory"
+- **Verify**: Should suggest `rmdir dirname`
+- **Test**: Create an empty test directory and remove it
+- **Document**: Note this only works on empty directories
+
+**⚠️ DANGEROUS EXERCISE - Only try with test data:**
+
+**Exercise 7: Remove directory with contents (CAUTION)**
+- **Prompt**: "Show me how to remove a directory and all its contents, but let me verify first"
+- **Verify**: Should suggest listing first, then `rm -r`
+- **Test**: Create a test directory with some test files
+- **Document**: Note the danger and verification steps
+
+### Common AI Collaboration Patterns
+
+**Pattern 1: Building project structure**
+```
+You: "Show me how to create a project structure for a web app"
+AI: [gives basic mkdir commands]
+You: "Can you show me how to create src, tests, docs, and config directories all at once?"
+AI: [gives mkdir src tests docs config]
+You: "And how do I create subdirectories under src like components and utils?"
+AI: [gives mkdir -p src/{components,utils}]
+```
+
+**Pattern 2: Safe deletion workflow**
+```
+You: "Show me how to delete a directory called old-project"
+AI: [gives rm -r old-project]
+You: "How can I check what's inside first before deleting?"
+AI: [gives ls -la old-project or tree old-project]
+You: [checks contents]
+You: "OK, now show me how to delete it"
+AI: [gives rm -r old-project]
+```
+
+**Pattern 3: Understanding errors**
+```
+You: [tries rmdir on non-empty directory]
+You: "I got 'Directory not empty' error. What does this mean?"
+AI: [explains rmdir only works on empty directories]
+You: "How do I remove it if it has files?"
+AI: [explains rm -r and warns about danger]
+```
+
+### Safety Guidelines
+
+**⚠️ CRITICAL: Directory deletion is permanent!**
+
+**DO:**
+- ✅ Use `ls` to check contents before deleting
+- ✅ Use `rmdir` for empty directories (safer)
+- ✅ Create backups before deleting important directories
+- ✅ Test commands on test directories first
+- ✅ Double-check paths before running rm -r
+
+**DON'T:**
+- ❌ Use `rm -rf` without being absolutely sure
+- ❌ Delete directories you don't understand
+- ❌ Use wildcards with rm -r without testing
+- ❌ Run rm -rf with sudo unless you know exactly why
+- ❌ Delete system directories (/etc, /usr, /var, etc.)
+
+**If unsure, ask AI:**
+- "Is it safe to delete this directory?"
+- "How can I check what's inside before deleting?"
+- "Can I undo this if I make a mistake?" (Answer: No!)
+
+### Verification Checklist
+
+After getting a solution from AI:
+- [ ] I understand what this command will do
+- [ ] I know which directories it will affect
+- [ ] If deleting, I've verified the contents first
+- [ ] If deleting, I have a backup if needed
+- [ ] I've tested on a safe test directory first
+- [ ] I understand I cannot undo deletions
+- [ ] I've documented the working solution
+
+### Next Steps
+
+1. Start with SAFE exercises (creating, copying, renaming)
+2. Practice on test directories, not real projects
+3. Only practice deletion on directories you created for testing
+4. Document patterns in `my-knowledge/problems-i-solve.md`
+
+**Remember**: Creating and copying directories is safe. Deleting is permanent - always verify first!
 
 ## What to memorize (for exams)
 

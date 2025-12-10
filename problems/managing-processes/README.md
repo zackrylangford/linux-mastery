@@ -216,27 +216,181 @@ top -u username
 - Useful on multi-user systems
 - Can also use `ps -u username`
 
-## Try it yourself
+## Try with AI
 
-**Practice with AI:**
-1. Think of a specific version of this problem you want to solve
-2. Use one of the AI prompt templates above
-3. Ask AI to generate the solution
-4. **Before running it:** Try to understand what the AI gave you
-5. Run it and verify it works
-6. Document what you learned in `my-knowledge/problems-i-solve.md`
+**New to AI collaboration?** Check out the [AI Prompting Guide](../../references/ai-prompting-guide.md) for detailed tips on working effectively with AI.
 
-**Verification checklist:**
-- [ ] Does the solution match what you asked for?
-- [ ] Can you explain what each part does?
-- [ ] Did you test it safely (won't kill important processes)?
-- [ ] Do you understand when to use this approach?
+### How to Use AI for This Problem
 
-**Safe practice exercises:**
-1. Ask AI: "Show me how to see all running processes on my system"
-2. Ask AI: "Show me how to monitor which processes are using the most CPU"
-3. Ask AI: "Show me how to find the process ID of a program called 'python'"
-4. **Don't practice killing processes unless you know what you're doing!**
+**Step 1: Understand what you need**
+Before asking AI, be clear about:
+- Do you need to view, monitor, or control processes?
+- Are you looking for a specific program or all processes?
+- Do you need real-time monitoring or a snapshot?
+- Are you trying to stop something or just observe?
+
+**Step 2: Use a good prompt template**
+
+Choose based on your need:
+
+```
+Viewing processes:
+"Show me how to list all processes running on my system with [details: CPU, memory, user]"
+
+Finding specific process:
+"Show me how to find the process ID of [program name]"
+
+Monitoring resources:
+"Show me how to monitor processes in real-time and see which ones are using the most [CPU/memory]"
+
+Stopping processes:
+"Show me how to stop a process called [name] that's not responding"
+
+Adjusting priority:
+"Show me how to run [command] with low priority so it doesn't slow down my system"
+```
+
+**Step 3: Verify the AI's solution**
+
+Before running the command, check:
+- [ ] Does it target the right process? (check process name/ID)
+- [ ] Will it kill or modify anything? (look for `kill`, `killall`, `pkill`)
+- [ ] Do you have permission to affect this process?
+- [ ] Is it using the right signal? (SIGTERM vs SIGKILL)
+- [ ] Can you test it safely first?
+
+**Step 4: Test safely**
+
+```bash
+# SAFE: Just viewing processes
+ps aux | grep firefox          # Safe - just looking
+top                            # Safe - just monitoring
+pgrep nginx                    # Safe - just finding PID
+
+# CAUTION: These affect processes
+kill 1234                      # Polite stop - process can clean up
+kill -9 1234                   # Force kill - immediate termination
+killall firefox                # Kills ALL firefox processes
+
+# ALWAYS verify before killing:
+ps aux | grep processname      # First, see what you're about to kill
+pgrep -a processname           # Show PID and full command
+# Then kill if you're sure
+```
+
+**Step 5: Understand the result**
+
+Ask AI to explain if you don't understand:
+- "What's the difference between kill and kill -9?"
+- "Why do I see multiple processes with the same name?"
+- "What does the niceness value mean?"
+
+### Practice Exercises with AI
+
+**Exercise 1: View all processes (SAFE)**
+- **Prompt**: "Show me how to see all running processes on my system with CPU and memory usage"
+- **Verify**: Check that it uses `ps aux` or similar
+- **Test**: Run it and observe the output
+- **Document**: Note what the columns mean
+
+**Exercise 2: Monitor in real-time (SAFE)**
+- **Prompt**: "Show me how to monitor which processes are using the most CPU in real-time"
+- **Verify**: Check that it suggests `top` or `htop`
+- **Test**: Run it, press 'q' to quit
+- **Document**: Note the keyboard shortcuts
+
+**Exercise 3: Find a process (SAFE)**
+- **Prompt**: "Show me how to find the process ID of a program called 'python'"
+- **Verify**: Check for `pgrep`, `ps aux | grep`, or `pidof`
+- **Test**: Run it with a program you know is running
+- **Document**: Save the command pattern
+
+**Exercise 4: Understanding process info (SAFE)**
+- **Prompt**: "Show me how to see detailed information about a specific process with PID 1234"
+- **Verify**: Check for `ps -p 1234 -f` or similar
+- **Test**: Use a real PID from your system
+- **Document**: Note what information is shown
+
+**⚠️ DANGEROUS EXERCISES - Only try these if you understand the risks:**
+
+**Exercise 5: Stopping a process (CAUTION)**
+- **Prompt**: "Show me how to gracefully stop a process called 'test-app'"
+- **Verify**: Check that it uses `kill` (not `kill -9`) or `killall`
+- **Test**: Only on a process you created for testing!
+- **Document**: Note the difference between signals
+
+### Common AI Collaboration Patterns
+
+**Pattern 1: From viewing to acting**
+```
+You: "Show me all firefox processes"
+AI: [gives ps aux | grep firefox]
+You: [runs it, sees the PIDs]
+You: "Now show me how to stop process 12345"
+AI: [gives kill command]
+```
+
+**Pattern 2: Understanding before acting**
+```
+You: "Show me how to kill a frozen process"
+AI: [gives kill -9 command]
+You: "What's the difference between kill and kill -9?"
+AI: [explains SIGTERM vs SIGKILL]
+You: "Show me how to try the gentle way first"
+AI: [gives kill without -9]
+```
+
+**Pattern 3: Troubleshooting**
+```
+You: "Show me how to stop nginx"
+AI: [gives killall nginx]
+You: [tries it] "I got 'permission denied'"
+You: "How do I stop nginx when I get permission denied?"
+AI: [suggests sudo or checking if you own the process]
+```
+
+### Safety Guidelines
+
+**⚠️ CRITICAL: Process management can break your system!**
+
+**DO:**
+- ✅ Use `ps` and `top` to observe (always safe)
+- ✅ Find PIDs before killing anything
+- ✅ Use `kill` (SIGTERM) before `kill -9` (SIGKILL)
+- ✅ Double-check the process name/PID before killing
+- ✅ Test on processes you created, not system processes
+
+**DON'T:**
+- ❌ Kill processes you don't understand
+- ❌ Use `killall` on common names (like "python" or "bash")
+- ❌ Kill system processes (PID 1, kernel threads)
+- ❌ Use `kill -9` as your first choice
+- ❌ Run commands with `sudo` unless you understand why
+
+**If unsure, ask AI:**
+- "Is it safe to kill this process?"
+- "What will happen if I stop [process name]?"
+- "How can I test this without breaking anything?"
+
+### Verification Checklist
+
+After getting a solution from AI:
+- [ ] I understand what this command will do
+- [ ] I know which process(es) it will affect
+- [ ] I've verified the process name/PID is correct
+- [ ] I understand the consequences (will it stop a service?)
+- [ ] I've tested on a safe process first (if killing)
+- [ ] I know how to undo this if needed
+- [ ] I've documented the working solution
+
+### Next Steps
+
+1. Start with SAFE exercises (viewing and monitoring)
+2. Practice finding processes before trying to control them
+3. Only practice killing processes you created for testing
+4. Document patterns in `my-knowledge/problems-i-solve.md`
+
+**Remember**: Process management is powerful and dangerous. Always understand what you're doing before affecting processes. When in doubt, just observe with `ps` and `top`.
 
 ## Related problems
 

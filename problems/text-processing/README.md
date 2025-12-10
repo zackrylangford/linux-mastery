@@ -264,27 +264,192 @@ awk -F',' '$3 > 100 {print $1, $2}' sales.csv
 - Shows awk's filtering and logic capabilities
 - Output: Rows where column 3 > 100, showing columns 1 and 2
 
-## Try it yourself
+## Try with AI
 
-**Practice with AI:**
-1. Think of a specific version of this problem you want to solve
-2. Use one of the AI prompt templates above
-3. Ask AI to generate the solution
-4. **Before running it:** Try to understand what the AI gave you
-5. Run it and verify it works
-6. Document what you learned in `my-knowledge/problems-i-solve.md`
+**New to AI collaboration?** Check out the [AI Prompting Guide](../../references/ai-prompting-guide.md) for detailed tips on working effectively with AI.
 
-**Verification checklist:**
-- [ ] Does the solution match what you asked for?
-- [ ] Can you explain what each part does?
-- [ ] Did you test it safely (won't modify important files)?
-- [ ] Do you understand when to use this approach?
+### How to Use AI for This Problem
 
-**Safe practice exercises:**
-1. Ask AI: "Show me how to find all lines containing 'error' in a log file"
-2. Ask AI: "Show me how to extract the first column from a comma-separated file"
-3. Ask AI: "Show me how to count how many times each word appears in a file"
-4. Ask AI: "Show me how to replace all occurrences of 'foo' with 'bar' in a file"
+**Step 1: Understand what you need**
+Before asking AI, be clear about:
+- What are you searching for? (pattern, column, line range?)
+- What transformation do you need? (replace, extract, filter, count?)
+- What's the input format? (CSV, log file, plain text?)
+- What should the output look like?
+
+**Step 2: Use a good prompt template**
+
+Choose based on your need:
+
+```
+Searching/filtering:
+"Show me how to find all lines in [file] that contain [pattern]"
+
+Extracting columns:
+"Show me how to extract column [N] from [file] that's delimited by [character]"
+
+Find and replace:
+"Show me how to replace all occurrences of [old] with [new] in [file]"
+
+Counting/analyzing:
+"Show me how to count how many times [pattern] appears in [file]"
+
+Sorting/deduplicating:
+"Show me how to sort [file] by [criteria] and remove duplicates"
+
+Complex processing:
+"I have a [format] file with [structure]. Extract [what] where [criteria] and [output format]"
+```
+
+**Step 3: Verify the AI's solution**
+
+Before running the command, check:
+- [ ] Does it read from the right file?
+- [ ] Will it modify the original file? (look for `-i` flag with sed)
+- [ ] Are the delimiters correct for your data format?
+- [ ] Does the output format match what you need?
+- [ ] Can you test it safely first? (without `-i`, redirect to new file)
+
+**Step 4: Test safely**
+
+```bash
+# SAFE: Output to screen (doesn't modify files)
+grep "error" logfile.txt                    # Safe - just displays
+sed 's/old/new/g' file.txt                  # Safe - shows result
+awk '{print $1}' data.csv                   # Safe - displays column
+
+# SAFE: Output to new file
+sed 's/old/new/g' file.txt > file_new.txt   # Safe - creates new file
+grep "pattern" input.txt > output.txt       # Safe - saves to new file
+
+# CAUTION: Modifies original file
+sed -i 's/old/new/g' file.txt               # Modifies file in place!
+
+# BEST PRACTICE: Test without -i first, then add it
+sed 's/old/new/g' file.txt                  # 1. Check output looks right
+sed -i 's/old/new/g' file.txt               # 2. Then modify if good
+```
+
+**Step 5: Understand the result**
+
+Ask AI to explain if you don't understand:
+- "What does the 'g' flag do in sed?"
+- "Why do I need to sort before using uniq?"
+- "What's the difference between $1 and $NF in awk?"
+
+### Practice Exercises with AI
+
+**Exercise 1: Search for patterns**
+- **Prompt**: "Show me how to find all lines containing 'error' in /var/log/syslog and show the line numbers"
+- **Verify**: Check for `grep` with `-n` flag
+- **Test**: Run it and see if output makes sense
+- **Document**: Note this pattern for log analysis
+
+**Exercise 2: Extract columns**
+- **Prompt**: "Show me how to extract the first column from a comma-separated file called data.csv"
+- **Verify**: Check for `cut -d',' -f1` or `awk -F',' '{print $1}'`
+- **Test**: Try on a sample CSV file
+- **Document**: Save both approaches and when to use each
+
+**Exercise 3: Count occurrences**
+- **Prompt**: "Show me how to count how many times each unique line appears in a file and sort by frequency"
+- **Verify**: Check for `sort | uniq -c | sort -rn` pattern
+- **Test**: Try on a simple text file
+- **Document**: Note this pattern for frequency analysis
+
+**Exercise 4: Find and replace (safe)**
+- **Prompt**: "Show me how to replace all occurrences of 'foo' with 'bar' in test.txt and save to a new file"
+- **Verify**: Check for `sed 's/foo/bar/g'` with output redirection
+- **Test**: Create a test file first
+- **Document**: Note the difference between with and without `-i`
+
+**Exercise 5: Filter and extract**
+- **Prompt**: "I have a CSV with columns name,age,city. Show me how to extract names of people older than 25"
+- **Verify**: Check for `awk` with condition and field extraction
+- **Test**: Create a sample CSV to test
+- **Document**: Note this pattern for conditional extraction
+
+**Exercise 6: Complex pipeline**
+- **Prompt**: "Show me how to find all unique IP addresses in access.log and count how many times each appears, sorted by frequency"
+- **Verify**: Check for grep/awk to extract IPs, then sort | uniq -c | sort -rn
+- **Test**: Try on a sample log file
+- **Document**: Break down each step of the pipeline
+
+### Common AI Collaboration Patterns
+
+**Pattern 1: Building up complexity**
+```
+You: "Show me how to find lines with 'error' in log.txt"
+AI: [gives basic grep]
+You: "Now show me how to also include the line number and filename"
+AI: [adds -n and -H flags]
+You: "And make it case-insensitive"
+AI: [adds -i flag]
+```
+
+**Pattern 2: Testing before modifying**
+```
+You: "Show me how to replace 'old' with 'new' in config.txt"
+AI: [gives sed with -i]
+You: "Show me how to test this first without modifying the file"
+AI: [gives sed without -i, or with output redirection]
+```
+
+**Pattern 3: Understanding the pipeline**
+```
+You: [gets complex pipeline from AI]
+You: "Can you explain what each part of this pipeline does?"
+AI: [breaks down each command]
+You: "Why do we need to sort before uniq?"
+AI: [explains uniq only works on adjacent lines]
+```
+
+### Working with Different Data Formats
+
+**CSV files:**
+```
+Prompt: "I have a CSV with headers. Show me how to extract column 2 skipping the header"
+Tools: awk, cut, tail
+```
+
+**Log files:**
+```
+Prompt: "Show me how to extract timestamps and error messages from syslog format"
+Tools: grep, awk, sed
+```
+
+**Configuration files:**
+```
+Prompt: "Show me how to find all uncommented lines in a config file"
+Tools: grep -v '^#', sed
+```
+
+**JSON/structured data:**
+```
+Prompt: "Show me how to extract specific fields from JSON using command-line tools"
+Tools: grep, awk, or suggest jq
+```
+
+### Verification Checklist
+
+After getting a solution from AI:
+- [ ] I understand what each command in the pipeline does
+- [ ] I know what the input format is
+- [ ] I know what the output format will be
+- [ ] I've tested it without modifying files (no `-i` flag)
+- [ ] The results match what I expected
+- [ ] I understand when to use this tool vs alternatives
+- [ ] I've documented the working solution
+
+### Next Steps
+
+1. Pick one exercise and try it with AI
+2. Test the solution on sample data first
+3. Understand each part of the command/pipeline
+4. Document the pattern in `my-knowledge/problems-i-solve.md`
+5. Try variations to deepen understanding
+
+**Remember**: Text processing is about combining simple tools (grep, sed, awk, sort, uniq) into powerful pipelines. Focus on understanding what each tool does, not memorizing all the flags.
 
 ## Related problems
 

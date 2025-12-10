@@ -132,15 +132,15 @@
     - Generate problem guide templates from existing content
     - Requirements: 1.4, 3.1
 
-- [ ] 9. Add AI collaboration examples
-  - [ ] 9.1 Create AI prompting guide
+- [x] 9. Add AI collaboration examples
+  - [x] 9.1 Create AI prompting guide
     - How to ask AI for Linux help effectively
     - Examples of good prompts
     - How to verify AI solutions
     - How to refine prompts
     - Requirements: 4.1, 4.2, 4.3, 4.4
   
-  - [ ] 9.2 Add AI collaboration to problem guides
+  - [x] 9.2 Add AI collaboration to problem guides
     - Include "Try with AI" section in each guide
     - Provide prompt templates
     - Show how to verify results

@@ -142,19 +142,171 @@ cd ../../../
 
 ## Try with AI
 
-### Beginner prompts
-- "Show me how to check what directory I'm currently in"
-- "How do I move to my home directory?"
-- "Show me how to list all files in the current directory"
+**New to AI collaboration?** Check out the [AI Prompting Guide](../../references/ai-prompting-guide.md) for detailed tips on working effectively with AI.
 
-### Intermediate prompts
-- "Show me how to navigate to /var/log and list all files with details"
-- "How do I go up two directory levels?"
-- "Show me how to list all files including hidden ones, sorted by modification time"
+### How to Use AI for This Problem
 
-### Advanced prompts
-- "Show me how to navigate to a directory and create a backup of all .txt files"
-- "How do I find my current location and save it to return later?"
+**Step 1: Understand what you need**
+Before asking AI, be clear about:
+- Do you need to know where you are?
+- Do you need to see what's in a directory?
+- Do you need to move to a different location?
+- Do you know the path or just the general direction?
+
+**Step 2: Use a good prompt template**
+
+```
+Finding your location:
+"Show me how to check what directory I'm currently in"
+
+Listing contents:
+"Show me how to list all files in [directory] including [hidden files/details/sizes]"
+
+Moving around:
+"Show me how to navigate to [directory path]"
+"Show me how to go to my home directory"
+"Show me how to go up [N] directory levels"
+
+Combining actions:
+"Show me how to navigate to [path] and list all files with details"
+```
+
+**Step 3: Verify the AI's solution**
+
+Before running the command, check:
+- [ ] Does the path look correct?
+- [ ] Will it just navigate/list, or modify anything?
+- [ ] Do you have permission to access that directory?
+- [ ] Is it using absolute or relative paths appropriately?
+
+**Step 4: Test safely**
+
+```bash
+# All navigation commands are SAFE - they don't modify anything
+pwd                    # Safe - just shows location
+ls                     # Safe - just lists files
+cd /some/path          # Safe - just moves you
+cd ..                  # Safe - goes up one level
+
+# You can always go back
+cd /some/path          # Go somewhere
+cd -                   # Go back to previous location
+cd ~                   # Go home if you get lost
+```
+
+**Step 5: Understand the result**
+
+Ask AI to explain if you don't understand:
+- "What does the -la flag do in ls?"
+- "What's the difference between cd ~ and cd /"
+- "How do I know if a path is absolute or relative?"
+
+### Practice Exercises with AI
+
+**Exercise 1: Check your location (SAFE)**
+- **Prompt**: "Show me how to check what directory I'm currently in"
+- **Verify**: Should suggest `pwd`
+- **Test**: Run it and see your current path
+- **Document**: Note when you'd use this
+
+**Exercise 2: List files with details (SAFE)**
+- **Prompt**: "Show me how to list all files in the current directory including hidden files and details"
+- **Verify**: Should suggest `ls -la` or similar
+- **Test**: Run it and observe the output format
+- **Document**: Note what each column means
+
+**Exercise 3: Navigate to home (SAFE)**
+- **Prompt**: "Show me how to quickly navigate to my home directory"
+- **Verify**: Should suggest `cd` or `cd ~`
+- **Test**: Try it from different locations
+- **Document**: Note this shortcut
+
+**Exercise 4: Navigate and list (SAFE)**
+- **Prompt**: "Show me how to navigate to /etc and list all files with details"
+- **Verify**: Should suggest `cd /etc && ls -la` or similar
+- **Test**: Run it and explore the output
+- **Document**: Note the && pattern for combining commands
+
+**Exercise 5: Navigate relatively (SAFE)**
+- **Prompt**: "Show me how to go up two directory levels"
+- **Verify**: Should suggest `cd ../..`
+- **Test**: Try from different locations
+- **Document**: Note the .. pattern
+
+**Exercise 6: Return to previous location (SAFE)**
+- **Prompt**: "Show me how to go back to the directory I was just in"
+- **Verify**: Should suggest `cd -`
+- **Test**: Navigate somewhere, then somewhere else, then use cd -
+- **Document**: Note this useful shortcut
+
+### Common AI Collaboration Patterns
+
+**Pattern 1: Exploring unfamiliar territory**
+```
+You: "Show me how to navigate to /var/log"
+AI: [gives cd /var/log]
+You: [runs it]
+You: "Now show me how to list all files here sorted by size"
+AI: [gives ls -lhS]
+```
+
+**Pattern 2: Understanding where you are**
+```
+You: [gets lost in filesystem]
+You: "Show me how to check where I am and list what's here"
+AI: [gives pwd and ls]
+You: "How do I get back to my home directory?"
+AI: [gives cd or cd ~]
+```
+
+**Pattern 3: Building navigation skills**
+```
+You: "Show me how to navigate to /etc"
+AI: [gives cd /etc]
+You: "Now how do I go up one level?"
+AI: [gives cd ..]
+You: "And how do I go back to /etc?"
+AI: [gives cd - or cd /etc]
+```
+
+### Understanding the Output
+
+**When you run `pwd`:**
+```bash
+/home/username/projects/myapp
+```
+This shows your full path from root (/) to your current location.
+
+**When you run `ls -la`:**
+```bash
+drwxr-xr-x 2 user user 4096 Dec 10 10:00 mydir
+-rw-r--r-- 1 user user  123 Dec 10 10:00 file.txt
+```
+- First column: permissions (d = directory, - = file)
+- Numbers: links, owner, group, size
+- Date/time: last modified
+- Name: file or directory name
+
+Ask AI: "Can you explain what each column means in ls -la output?"
+
+### Verification Checklist
+
+After getting a solution from AI:
+- [ ] I understand what this command does
+- [ ] I know where it will take me or what it will show
+- [ ] I've tested it and the output makes sense
+- [ ] I understand the difference between absolute and relative paths
+- [ ] I know how to get back if I get lost (cd ~ or cd -)
+- [ ] I've documented useful patterns
+
+### Next Steps
+
+1. Practice all the exercises above - they're all safe!
+2. Explore different directories on your system
+3. Practice using both absolute and relative paths
+4. Document navigation patterns in `my-knowledge/problems-i-solve.md`
+
+**Remember**: Navigation commands are safe - you can't break anything by moving around or listing files. Explore freely!
 
 ## What to memorize (for exams)
 

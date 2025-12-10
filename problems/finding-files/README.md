@@ -170,26 +170,135 @@ find /var/www -type f -perm 0777
 - Important for security audits
 - Output: Files that might be security vulnerabilities
 
-## Try it yourself
+## Try with AI
 
-**Practice with AI:**
-1. Think of a specific version of this problem you want to solve
-2. Use one of the AI prompt templates above
-3. Ask AI to generate the solution
-4. **Before running it:** Try to understand what the AI gave you
-5. Run it and verify it works
-6. Document what you learned in `my-knowledge/problems-i-solve.md`
+**New to AI collaboration?** Check out the [AI Prompting Guide](../../references/ai-prompting-guide.md) for detailed tips on working effectively with AI.
 
-**Verification checklist:**
-- [ ] Does the solution match what you asked for?
-- [ ] Can you explain what each part does?
-- [ ] Did you test it safely (won't delete/break things)?
-- [ ] Do you understand when to use this approach?
+### How to Use AI for This Problem
 
-**Safe practice exercises:**
-1. Ask AI: "Show me how to find all files in my home directory larger than 50MB"
-2. Ask AI: "Show me how to find all .txt files modified in the last 3 days"
-3. Ask AI: "Show me how to find which directories in /home are using the most space"
+**Step 1: Understand what you need**
+Before asking AI, be clear about:
+- What are you looking for? (files by name, size, content, time?)
+- Where should it search? (specific directory or entire system?)
+- What should the output look like? (just paths, or with details?)
+
+**Step 2: Use a good prompt template**
+
+Choose based on your need:
+
+```
+Finding by name:
+"Show me how to find all [file type] files in [directory] that match [pattern]"
+
+Finding by size:
+"Show me how to find files in [directory] larger than [size] and list them with their sizes"
+
+Finding by content:
+"Show me how to search all [file types] in [directory] for lines containing [text]"
+
+Finding by time:
+"Show me how to find files in [directory] modified in the last [time period]"
+
+Disk usage:
+"Show me the largest [N] files/directories in [path] to help free up space"
+```
+
+**Step 3: Verify the AI's solution**
+
+Before running the command, check:
+- [ ] Does it search the right location?
+- [ ] Are the search criteria correct (size, time, name)?
+- [ ] Will it modify or delete anything? (look for `-delete`, `rm`, etc.)
+- [ ] Can you test it safely first? (add `-maxdepth 1` to limit scope)
+
+**Step 4: Test safely**
+
+```bash
+# If AI gives you something with -delete, test without it first:
+find /tmp -name "*.tmp" -mtime +7        # Test: just list files
+find /tmp -name "*.tmp" -mtime +7 -delete  # Then delete if list looks right
+
+# If searching large areas, test on smaller scope first:
+find . -maxdepth 1 -size +100M           # Test: current directory only
+find . -size +100M                        # Then search recursively
+```
+
+**Step 5: Understand the result**
+
+Ask AI to explain if you don't understand:
+- "Can you explain what each part of this command does?"
+- "Why did you use -type f instead of just searching?"
+- "What does the + in +100M mean?"
+
+### Practice Exercises with AI
+
+**Exercise 1: Find large files**
+- **Prompt**: "Show me how to find all files in my home directory larger than 50MB and display them sorted by size"
+- **Verify**: Check that it uses `find`, has correct size syntax, includes sorting
+- **Test**: Try with `-maxdepth 2` first to limit scope
+- **Document**: Save the working command in `my-knowledge/good-prompts.md`
+
+**Exercise 2: Find recent files**
+- **Prompt**: "Show me how to find all .txt files in ~/documents modified in the last 3 days"
+- **Verify**: Check for correct path, file extension, and time criteria
+- **Test**: Run it and check if the results make sense
+- **Document**: Note when you'd use this (finding recent work)
+
+**Exercise 3: Find disk space hogs**
+- **Prompt**: "Show me how to find the top 10 largest directories in /home to free up disk space"
+- **Verify**: Check that it uses `du`, sorts by size, limits to 10 results
+- **Test**: Run it and see if the output is readable
+- **Document**: Save this for future disk cleanup
+
+**Exercise 4: Find by content**
+- **Prompt**: "Show me how to find all .log files in /var/log that contain the word 'error' and show the filename and line number"
+- **Verify**: Check for `grep -r`, correct path, and output format
+- **Test**: Try on a smaller directory first if /var/log is large
+- **Document**: Note this pattern for log analysis
+
+### Common AI Collaboration Patterns
+
+**Pattern 1: Refining the search**
+```
+You: "Show me how to find large files"
+AI: [gives generic answer]
+You: "Show me files larger than 500MB in /home, modified in the last month, sorted by size"
+AI: [gives specific answer]
+```
+
+**Pattern 2: Making it safer**
+```
+You: "Show me how to find and delete old temp files"
+AI: [gives command with -delete]
+You: "Show me the same command but just list the files first without deleting"
+AI: [gives safer version]
+```
+
+**Pattern 3: Understanding the output**
+```
+You: [runs command, gets confusing output]
+You: "I ran this command and got [output]. What does this mean?"
+AI: [explains the output]
+```
+
+### Verification Checklist
+
+After getting a solution from AI:
+- [ ] I understand what problem this solves
+- [ ] I can explain what each part of the command does
+- [ ] I've tested it safely (limited scope or dry-run)
+- [ ] The results match what I expected
+- [ ] I know when to use this approach vs alternatives
+- [ ] I've documented the working solution
+
+### Next Steps
+
+1. Pick one exercise above and try it with AI
+2. Verify and test the solution safely
+3. Document what worked in `my-knowledge/problems-i-solve.md`
+4. Try a variation to deepen your understanding
+
+**Remember**: The goal isn't to memorize the syntax, it's to understand what's possible and how to direct AI to generate the right solution for your specific need.
 
 ## Related problems
 

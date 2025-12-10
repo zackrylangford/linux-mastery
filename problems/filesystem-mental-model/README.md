@@ -337,6 +337,139 @@ Where would you expect to find:
 - Your downloads → `~/Downloads/` or `/home/username/Downloads/`
 - Temporary files → `/tmp/`
 
+## Try with AI
+
+**New to AI collaboration?** Check out the [AI Prompting Guide](../../references/ai-prompting-guide.md) for detailed tips on working effectively with AI.
+
+### How to Use AI to Deepen Your Understanding
+
+Mental models are about understanding concepts, not memorizing commands. AI can help you explore and test your understanding.
+
+**Step 1: Ask for explanations**
+
+```
+"Explain the 'everything is a file' concept in Linux with examples"
+"Why does Linux use a single tree structure instead of drive letters?"
+"What's the practical difference between absolute and relative paths?"
+```
+
+**Step 2: Test your understanding**
+
+```
+"I'm in /home/user/projects/app/src. What does ../../docs/README.md resolve to?"
+"Where would I find [type of file] in the Linux filesystem hierarchy?"
+"Why can't I delete a directory that has files in it?"
+```
+
+**Step 3: Explore edge cases**
+
+```
+"What happens when I move a file between directories?"
+"How does the filesystem handle symbolic links?"
+"Why do some programs have config in /etc and others in ~/.config?"
+```
+
+### Practice Exercises with AI
+
+**Exercise 1: Understanding "everything is a file"**
+- **Prompt**: "Show me examples of how devices, processes, and network connections are treated as files in Linux"
+- **Follow-up**: "Show me how to read system information from /proc/ as if it were a text file"
+- **Document**: Note examples that help you remember this concept
+
+**Exercise 2: Tracing paths**
+- **Prompt**: "I'm in /home/alice/projects/myapp/src. Trace these paths for me: ../README.md, ../../other-app/config.json, ~/documents/notes.txt"
+- **Follow-up**: "Explain step-by-step how each path resolves"
+- **Document**: Note the pattern for resolving relative paths
+
+**Exercise 3: Filesystem hierarchy**
+- **Prompt**: "Where would I find [configuration files / log files / temporary files / user programs] in the Linux filesystem and why?"
+- **Follow-up**: "Show me examples of actual files in each location"
+- **Document**: Create your own mental map of important locations
+
+**Exercise 4: Understanding directory operations**
+- **Prompt**: "Explain why moving a file within the same filesystem is instant but copying takes time"
+- **Follow-up**: "What's actually happening when I run mv vs cp?"
+- **Document**: Note the mental model that helps you understand this
+
+**Exercise 5: Absolute vs relative paths**
+- **Prompt**: "I'm writing a script that needs to read a config file. Should I use an absolute or relative path? Why?"
+- **Follow-up**: "Show me examples of when each type is appropriate"
+- **Document**: Note your decision-making criteria
+
+**Exercise 6: Exploring the tree structure**
+- **Prompt**: "Show me how to visualize the directory tree structure starting from /home/user"
+- **Follow-up**: "Explain how this tree structure affects navigation commands"
+- **Document**: Draw your own tree diagram for your system
+
+### Common AI Collaboration Patterns
+
+**Pattern 1: Concept to practice**
+```
+You: "Explain the directory tree concept"
+AI: [gives explanation]
+You: "Show me commands to explore this tree structure on my system"
+AI: [gives tree, ls -R, find commands]
+You: [tries them]
+You: "Now I see it! Can you show me how to navigate between branches?"
+AI: [gives cd examples]
+```
+
+**Pattern 2: Testing understanding**
+```
+You: "I think relative paths are like directions from where you are. Is that right?"
+AI: [confirms and elaborates]
+You: "Give me a quiz question to test if I understand"
+AI: [provides scenario]
+You: [answers]
+You: "How did I do?"
+AI: [provides feedback]
+```
+
+**Pattern 3: Connecting concepts**
+```
+You: "How does the 'everything is a file' concept relate to the directory tree?"
+AI: [explains connection]
+You: "Show me a practical example where understanding both concepts helps"
+AI: [provides real-world scenario]
+```
+
+### Deepening Your Mental Models
+
+**Ask AI to help you visualize:**
+- "Draw a diagram showing how /home/user/projects relates to the root"
+- "Show me a visual representation of absolute vs relative paths"
+- "Create a map of the most important directories in /etc"
+
+**Ask AI to provide analogies:**
+- "Explain the Linux filesystem using a real-world analogy"
+- "Compare absolute and relative paths to something from everyday life"
+- "What's a good analogy for understanding why directories can't be deleted when they have files?"
+
+**Ask AI for real-world scenarios:**
+- "Give me a scenario where understanding the filesystem hierarchy would help me troubleshoot"
+- "Show me a real problem that's easier to solve when you understand 'everything is a file'"
+- "What's a common mistake people make when they don't understand relative paths?"
+
+### Verification Checklist
+
+After working with AI on mental models:
+- [ ] I can explain the concept in my own words
+- [ ] I can provide my own examples
+- [ ] I understand why this concept matters practically
+- [ ] I can apply this mental model to solve problems
+- [ ] I can predict what will happen in new situations
+- [ ] I've tested my understanding with real commands
+
+### Next Steps
+
+1. Pick one mental model and explore it deeply with AI
+2. Test your understanding by predicting outcomes
+3. Apply the mental model to solve a real problem
+4. Document your understanding in `my-knowledge/problems-i-solve.md`
+5. Move to the next mental model
+
+**Remember**: Mental models are about understanding WHY, not memorizing WHAT. Use AI to explore concepts until they click, then apply them to real situations.
+
 ## Key Takeaways
 
 1. **Everything is a file** - This mental model unifies how you interact with Linux
